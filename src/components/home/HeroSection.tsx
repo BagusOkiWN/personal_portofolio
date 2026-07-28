@@ -51,7 +51,7 @@ export function HeroSection() {
             className="order-1 md:order-2 flex justify-center md:justify-end relative"
           >
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-bg-elevated shadow-xl bg-bg-secondary flex items-center justify-center">
-              <Image src="/images/freya.jpg" alt="Profile" width={500} height={500} className="w-full h-full object-cover" />
+              <Image src="/images/turu.png" alt="Profile" width={500} height={500} className="w-full h-full object-cover" />
             </div>
 
             {/* Decorative background glow */}
