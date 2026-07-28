@@ -1,0 +1,104 @@
+[
+  {
+    "slug": "kencana",
+    "name": "KENCANA",
+    "thumbnail": "/images/kencana.jpg",
+    "shortDescription": "A Web Based Apps To Monitor Stunting Cases",
+    "category": "Web Development",
+    "techStack": [
+      "Laravel",
+      "Vue.js",
+      "MySQL"
+    ],
+    "liveDemoUrl": null,
+    "githubUrl": "https://github.com/BagusOkiWN/kencana",
+    "detail": {
+      "background": "The client needed a modern platform to monitor stunting cases and its prevention indicators in Karanganyar Regency.",
+      "role": "Full-Stack Developer",
+      "mainFeatures": [
+        "Dashboard for stunting cases monitoring",
+        "Data visualization of stunting prevention indicators",
+        "Data import from Excel",
+        "Data Export to Excel"
+      ],
+      "techStack": [
+        "Laravel",
+        "Vue.js",
+        "MySQL",
+        "Vuetify"
+      ],
+      "challenges": "Handling lots data from Excel to Web for visualization and reporting.",
+      "solution": "Invented a method to import data from Excel to Web for visualization and reporting.",
+      "screenshots": [
+        "images/kencana.jpg"
+      ]
+    }
+  },
+  {
+    "slug": "rasudi",
+    "name": "RASUDI",
+    "thumbnail": "/images/rasudi.jpg",
+    "shortDescription": "A letter and disposition management application designed to support efficient digital correspondence handling",
+    "category": "Web Development",
+    "techStack": [
+      "Laravel",
+      "Vue.js",
+      "MySQL"
+    ],
+    "liveDemoUrl": null,
+    "githubUrl": "https://github.com/BagusOkiWN/rasudi",
+    "detail": {
+      "background": "The client needed a letter and disposition management application designed to support efficient digital correspondence handling.",
+      "role": "Backend Developer | Project Manager",
+      "mainFeatures": [
+        "Dashboard for letter and disposition management",
+        "Incoming letter tracking",
+        "Outgoing letter tracking",
+        "Disposition"
+      ],
+      "techStack": [
+        "Laravel",
+        "Vue.js",
+        "MySQL"
+      ],
+      "challenges": "Handling disposition feature and disposition layout letter.",
+      "solution": "Invented a method to handle disposition feature and disposition layout letter.",
+      "screenshots": [
+        "images/rasudi.jpg"
+      ]
+    }
+  },
+  {
+    "slug": "pmk-sv",
+    "name": "PMK SV Official Website",
+    "thumbnail": "/images/pmksv.jpg",
+    "shortDescription": "Official Website of PMK SV (Unreleased)",
+    "category": "Web Development",
+    "techStack": [
+      "Laravel",
+      "MySQL"
+    ],
+    "liveDemoUrl": null,
+    "githubUrl": "https://github.com/BagusOkiWN/web-profile-pmk-sv",
+    "detail": {
+      "background": "Just personal project for my organization",
+      "mainFeatures": [
+        "Homepage",
+        "Reflections",
+        "Recaps",
+        "Contact",
+        "About",
+        "Admin Dashboard"
+      ],
+      "techStack": [
+        "Laravel",
+        "MySQL"
+      ],
+      "challenges": null,
+      "solution": null,
+      "screenshots": [
+        "images/pmksv.jpg"
+      ]
+    }
+  }
+]

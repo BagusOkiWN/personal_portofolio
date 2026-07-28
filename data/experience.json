@@ -1,0 +1,73 @@
+[
+  {
+    "company": "Diskominfo Karanganyar",
+    "position": "Fullstack Developer Intern",
+    "period": "Jan 2025 - Jul 2025",
+    "location": "Karanganyar, Indonesia",
+    "achievements": [
+      "Developed and maintained web-based information systems using Laravel and Vue.js to support public service operations.",
+      "Collaborated with teams to implement RESTful APIs and ensure seamless integration between frontend and backend components.",
+      "Participated in debugging and feature enhancements to improve system usability and data accuracy for stakeholders."
+    ],
+    "techStack": [
+      "Laravel",
+      "Vue.js",
+      "MySQL",
+      "REST API",
+      "Git"
+    ]
+  },
+  {
+    "company": "Kodegiri",
+    "position": "DevOps Engineer Intern",
+    "period": "Sept 2024 - Jan 2025",
+    "location": "Yogyakarta, Indonesia",
+    "achievements": [
+      "Implemented and maintained CI/CD pipelines using GitLab CI to automate build and deployment processes across multiple environments.",
+      "Managed and optimized Docker-based container environments to ensure consistency and scalability of application deployments.",
+      "Monitored system performance and collaborated with development teams to identify and resolve deployment issues efficiently."
+    ],
+    "techStack": [
+      "Docker",
+      "GitLab CI/CD",
+      "Linux",
+      "Nginx",
+      "Git"
+    ]
+  },
+  {
+    "company": "Kecamatan Banjarsari",
+    "position": "Backend Developer",
+    "period": "Feb 2024 - Jul 2024",
+    "location": "Surakarta, Indonesia",
+    "achievements": [
+      "Designed and developed relational databases to support application functionality.",
+      "Developed and implemented RESTful API endpoints, facilitating seamless communication between frontend and backend systems.",
+      "Conducted thorough API testing to ensure the reliability and performance of backend services."
+    ],
+    "techStack": [
+      "PHP",
+      "MySQL",
+      "REST API",
+      "Postman",
+      "Git"
+    ]
+  },
+  {
+    "company": "Kecamatan Banjarsari",
+    "position": "Project Manager",
+    "period": "Feb 2024 - Jul 2024",
+    "location": "Surakarta, Indonesia",
+    "achievements": [
+      "Developed comprehensive project plans and timelines to ensure successful project execution.",
+      "Acted as the primary liaison between clients and the development team, ensuring clear communication of requirements, expectations, and feedback.",
+      "Monitored project progress, conducted regular status meetings, and implemented corrective actions to keep the project on track and within scope."
+    ],
+    "techStack": [
+      "Project Planning",
+      "Project Management",
+      "Stakeholder Communication",
+      "Team Coordination"
+    ]
+  }
+]

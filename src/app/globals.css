@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-success: var(--success);
+  --color-border-color: var(--border-color);
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  :root {
+    /* Light mode tokens */
+    --bg-primary: #F9FAFB;
+    --bg-secondary: #F3F4F6;
+    --bg-elevated: #FFFFFF;
+    --text-primary: #111827;
+    --text-secondary: #4B5563;
+    --accent: #0284C7;
+    --accent-soft: rgba(2, 132, 199, 0.1);
+    --success: #16A34A;
+    --border-color: #E5E7EB;
+  }
+
+  .dark {
+    /* Dark mode tokens */
+    --bg-primary: #0F1115;
+    --bg-secondary: #161A21;
+    --bg-elevated: #1C212B;
+    --text-primary: #E6E9EF;
+    --text-secondary: #9AA4B2;
+    --accent: #22D3EE;
+    --accent-soft: rgba(34, 211, 238, 0.15);
+    --success: #3DD68C;
+    --border-color: #262B35;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Pola grid halus di background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: 
+      linear-gradient(to right, rgba(150, 150, 150, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(150, 150, 150, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .dark body::before {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+}

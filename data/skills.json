@@ -1,0 +1,95 @@
+[
+  {
+    "category": "Programming Languages",
+    "items": [
+      {
+        "name": "PHP",
+        "icon": "php"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "javascript"
+      },
+      {
+        "name": "Python",
+        "icon": "python",
+        "level": "Currently Learning"
+      },
+      {
+        "name": "SQL",
+        "icon": "database"
+      }
+    ]
+  },
+  {
+    "category": "Web Development",
+    "items": [
+      {
+        "name": "HTML",
+        "icon": "html"
+      },
+      {
+        "name": "CSS",
+        "icon": "css"
+      },
+      {
+        "name": "Laravel",
+        "icon": "laravel"
+      },
+      {
+        "name": "Vue.js",
+        "icon": "vue"
+      },
+      {
+        "name": "REST API",
+        "icon": "api"
+      }
+    ]
+  },
+  {
+    "category": "Database",
+    "items": [
+      {
+        "name": "MySQL",
+        "icon": "mysql"
+      }
+    ]
+  },
+  {
+    "category": "DevOps & Deployment",
+    "items": [
+      {
+        "name": "Linux",
+        "icon": "linux"
+      },
+      {
+        "name": "Docker",
+        "icon": "docker"
+      },
+      {
+        "name": "Git",
+        "icon": "git"
+      },
+      {
+        "name": "GitLab",
+        "icon": "git-labs"
+      },
+      {
+        "name": "GitHub",
+        "icon": "github"
+      },
+      {
+        "name": "Nginx",
+        "icon": "nginx"
+      },
+      {
+        "name": "Cloudflare",
+        "icon": "cloud"
+      },
+      {
+        "name": "CI/CD",
+        "icon": "git-pull-request"
+      }
+    ]
+  }
+]
