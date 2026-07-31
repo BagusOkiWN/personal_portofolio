@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect } from "react"
-import { X, ExternalLink } from "lucide-react"
+import { useEffect, useState } from "react"
+import { X, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react"
 import { FaGithub } from "react-icons/fa"
 import { Project } from "@/lib/types"
 import { TechTag } from "@/components/ui/TechTag"
@@ -13,6 +13,94 @@ interface ProjectDetailModalProps {
   onClose: () => void
 }
 
+/* ──────────────────────────────────────────────
+   Screenshot Carousel (internal component)
+────────────────────────────────────────────── */
+function ScreenshotCarousel({
+  screenshots,
+  projectName,
+}: {
+  screenshots: string[]
+  projectName: string
+}) {
+  const [current, setCurrent] = useState(0)
+
+  const prev = () =>
+    setCurrent((c) => (c === 0 ? screenshots.length - 1 : c - 1))
+  const next = () =>
+    setCurrent((c) => (c === screenshots.length - 1 ? 0 : c + 1))
+
+  // Reset index whenever the screenshot list changes
+  useEffect(() => {
+    setCurrent(0)
+  }, [screenshots])
+
+  return (
+    <section>
+      <h3 className="text-lg font-semibold text-text-primary mb-3">Screenshots</h3>
+      <div className="relative w-full overflow-hidden rounded-xl border border-border-color bg-bg-secondary group">
+        {/* Image */}
+        <div className="relative aspect-video w-full overflow-hidden">
+          {screenshots.map((src, idx) => (
+            <img
+              key={src}
+              src={src}
+              alt={`${projectName} screenshot ${idx + 1}`}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                idx === current ? "opacity-100" : "opacity-0 pointer-events-none"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Prev / Next buttons — only shown when >1 screenshot */}
+        {screenshots.length > 1 && (
+          <>
+            <button
+              onClick={prev}
+              className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-bg-primary/70 border border-border-color text-text-primary hover:bg-accent hover:text-bg-primary transition-all duration-200 opacity-0 group-hover:opacity-100 focus:opacity-100"
+              aria-label="Previous screenshot"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              onClick={next}
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-bg-primary/70 border border-border-color text-text-primary hover:bg-accent hover:text-bg-primary transition-all duration-200 opacity-0 group-hover:opacity-100 focus:opacity-100"
+              aria-label="Next screenshot"
+            >
+              <ChevronRight size={18} />
+            </button>
+
+            {/* Dot indicators */}
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+              {screenshots.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrent(idx)}
+                  aria-label={`Go to screenshot ${idx + 1}`}
+                  className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                    idx === current
+                      ? "bg-accent w-5"
+                      : "bg-text-secondary/40 hover:bg-text-secondary/70"
+                  }`}
+                />
+              ))}
+            </div>
+
+            {/* Counter */}
+            <span className="absolute top-3 right-3 text-xs px-2 py-1 rounded-full bg-bg-primary/70 border border-border-color text-text-secondary tabular-nums">
+              {current + 1} / {screenshots.length}
+            </span>
+          </>
+        )}
+      </div>
+    </section>
+  )
+}
+
+/* ──────────────────────────────────────────────
+   Main Modal
+────────────────────────────────────────────── */
 export function ProjectDetailModal({ project, isOpen, onClose }: ProjectDetailModalProps) {
   // Prevent scrolling when modal is open
   useEffect(() => {
@@ -56,21 +144,37 @@ export function ProjectDetailModal({ project, isOpen, onClose }: ProjectDetailMo
         aria-labelledby="modal-title"
       >
         {/* Header (Sticky) */}
-        <div className="sticky top-0 z-10 flex items-center justify-between p-6 border-b border-border-color bg-bg-elevated/95 backdrop-blur">
-          <h2 id="modal-title" className="text-2xl font-bold text-text-primary pr-8">
-            {project.name}
-          </h2>
-          <button
-            onClick={onClose}
-            className="absolute right-6 top-6 p-2 rounded-full text-text-secondary hover:bg-bg-secondary hover:text-accent transition-colors"
-            aria-label="Close modal"
-          >
-            <X size={20} />
-          </button>
+        <div className="sticky top-0 z-10 flex flex-col gap-1 p-6 border-b border-border-color bg-bg-elevated/95 backdrop-blur">
+          <div className="flex items-center justify-between pr-10">
+            <h2 id="modal-title" className="text-2xl font-bold text-text-primary">
+              {project.name}
+            </h2>
+            <button
+              onClick={onClose}
+              className="absolute right-6 top-6 p-2 rounded-full text-text-secondary hover:bg-bg-secondary hover:text-accent transition-colors"
+              aria-label="Close modal"
+            >
+              <X size={20} />
+            </button>
+          </div>
+          {/* Short Description */}
+          {project.shortDescription && (
+            <p className="text-text-secondary text-sm leading-relaxed">
+              {project.shortDescription}
+            </p>
+          )}
         </div>
 
         {/* Body */}
         <div className="p-6 md:p-8 space-y-8">
+          {/* Screenshot Carousel */}
+          {project.detail.screenshots && project.detail.screenshots.length > 0 && (
+            <ScreenshotCarousel
+              screenshots={project.detail.screenshots}
+              projectName={project.name}
+            />
+          )}
+
           {/* Quick Links */}
           <div className="flex flex-wrap gap-4">
             {project.liveDemoUrl && (
