@@ -18,14 +18,14 @@ export function HeroSection() {
             transition={{ duration: 0.5, staggerChildren: 0.1 }}
             className="order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-left"
           >
-            <StatusBadge status="Open to Work" />
+            <StatusBadge status=":p" />
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary mb-4">
               Hi, I'm <span className="text-accent">Bagus Oki W. Nugroho</span>
             </h1>
 
             <h2 className="text-xl md:text-2xl font-medium text-text-secondary font-mono mb-6">
-              Programmer
+              Software Engineer
             </h2>
 
             <p className="text-base text-text-secondary leading-relaxed mb-8 max-w-lg">
@@ -36,9 +36,9 @@ export function HeroSection() {
               <Button variant="solid" asChild href="#projects">
                 View Projects
               </Button>
-              <Button variant="outline" asChild href="cv/CV_ATS_Bagus Oki W. Nugroho_Programmer_2026_ID.pdf" target="_blank" rel="noopener noreferrer">
+              {/* <Button variant="outline" asChild href="cv/CV_ATS_Bagus Oki W. Nugroho_Programmer_2026_ID.pdf" target="_blank" rel="noopener noreferrer">
                 Download CV
-              </Button>
+              </Button> */}
             </div>
 
             <SocialLinks variant="hero" />
