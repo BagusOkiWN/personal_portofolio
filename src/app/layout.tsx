@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { SnowEffect } from "@/components/ui/SnowEffect";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,6 +34,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col text-text-primary bg-bg-primary">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <SnowEffect />
           <Navbar />
           <main className="flex-1 w-full pt-20">
             {children}
