@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { useTheme } from "next-themes"
+import { isWinterSeason, WINTER_MONTHS } from "@/lib/season"
 
 type SnowflakeType = "crystal" | "star" | "dot"
 
@@ -155,7 +156,7 @@ function drawDot(ctx: CanvasRenderingContext2D, r: number, isDark: boolean, opac
 // ──────────────────────────────────────────────
 
 export function SnowEffect({
-  activeMonths = [10, 11, 0, 1], // November s/d Februari
+  activeMonths = WINTER_MONTHS,
   forceEnable = false,
 }: SnowEffectProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
@@ -166,11 +167,10 @@ export function SnowEffect({
     setMounted(true)
   }, [])
 
-  const currentMonth = new Date().getMonth()
-  const isSnowSeason = forceEnable || activeMonths.includes(currentMonth)
+  const isSeason = isWinterSeason(activeMonths, forceEnable)
 
   useEffect(() => {
-    if (!mounted || !isSnowSeason) return
+    if (!mounted || !isSeason) return
 
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
     if (mediaQuery.matches) return
@@ -285,9 +285,9 @@ export function SnowEffect({
       document.removeEventListener("visibilitychange", handleVisibilityChange)
       cancelAnimationFrame(animationFrameId)
     }
-  }, [mounted, isSnowSeason, resolvedTheme])
+  }, [mounted, isSeason, resolvedTheme])
 
-  if (!mounted || !isSnowSeason) return null
+  if (!mounted || !isSeason) return null
 
   return (
     <canvas

@@ -5,6 +5,7 @@ import { FaReplyAll } from "react-icons/fa"
 import { SocialLinks } from "./SocialLinks"
 import { StatusBadge } from "./StatusBadge"
 import { Button } from "@/components/ui/Button"
+import { SantaHat } from "@/components/ui/SantaHat"
 import { motion } from "framer-motion"
 
 export function HeroSection() {
@@ -50,8 +51,13 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="order-1 md:order-2 flex justify-center md:justify-end relative"
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-bg-elevated shadow-xl bg-bg-secondary flex items-center justify-center">
-              <Image src="/images/turu.png" alt="Profile" width={500} height={500} className="w-full h-full object-cover" />
+            <div className="relative group">
+              {/* Topi Santa bertema musim dingin/Desember */}
+              <SantaHat />
+
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-bg-elevated shadow-xl bg-bg-secondary flex items-center justify-center">
+                <Image src="/images/turu.png" alt="Profile" width={500} height={500} priority className="w-full h-full object-cover" />
+              </div>
             </div>
 
             {/* Decorative background glow */}
